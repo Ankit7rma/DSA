@@ -75,4 +75,20 @@ for i in range(len(arr)):
     print ("% d" % arr[i])
 
 
+# Cyclic Sort 
+
+def cyclicSort(arr):
+    i = 0
+    while i<len(arr):
+        correctIndex = arr[i]-1
+        if arr[i] != arr[correctIndex]:
+            arr[i] , arr[correctIndex] = arr[correctIndex],arr[i]
+        else:
+            i+=1
+
+# Driver code to test above
+arr = [5,4,2,1,3]
+ 
+cyclicSort(arr)
+print(arr)
 
