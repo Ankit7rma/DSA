@@ -84,11 +84,14 @@ def cyclicSort(arr):
         if arr[i] != arr[correctIndex]:
             arr[i] , arr[correctIndex] = arr[correctIndex],arr[i]
         else:
-            i+=1
+             i+=1
 
 # Driver code to test above
 arr = [5,4,2,1,3]
  
 cyclicSort(arr)
 print(arr)
+
+
+
 
