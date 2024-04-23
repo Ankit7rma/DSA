@@ -43,7 +43,6 @@
 # IN PLACE MERGE SORT 
 
 def mergeInplace(arr,s,mid,e):
- 
     i = s
     j = mid
     k = 0
