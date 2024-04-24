@@ -37,30 +37,39 @@
 
 
 # --------------------apple skip
-def skipApple(string):
+# def skipApple(string):
   
-    if len(string)==0:
-        return  ""
-    ch = string[0]
-    if string.startswith("apple"):
-        return skipApple(string[5:])
-    else:
-        return ch + skipApple(string[1:])
+#     if len(string)==0:
+#         return  ""
+#     ch = string[0]
+#     if string.startswith("apple"):
+#         return skipApple(string[5:])
+#     else:
+#         return ch + skipApple(string[1:])
 
 
-string = "bbapplecdea"
+# string = "bbapplecdea"
  
  
-ans = skipApple( string)
-print(ans)
+# ans = skipApple( string)
+# print(ans)
 
 
 
 # ----------Skip app that is not in apple 
 def skipAppNotApple(string):
+    if len(string)==0:
+        return ""
+    
+    if string.startswith("app") and not string.startswith("apple"):
+        return skipAppNotApple(string[3:])
+    else:
+        return string[0] + skipAppNotApple(string[1:])
+    
+    
 
-string = "bbapplecdea"
+string = "bappbapplecdea"
  
  
-ans = skipApple( string)
+ans = skipAppNotApple( string)
 print(ans)
