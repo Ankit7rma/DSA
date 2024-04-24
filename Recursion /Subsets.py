@@ -52,19 +52,36 @@
 
 # Iteration 
 
-def subset(arr):
-    outer = [[]]
-    for num in arr:
-        n = len(outer)
-        for i in range(n):
-            internal = outer[i][:]
-            internal.append(num)
-            outer.append(internal)
-    return outer
+# def subset(arr):
+#     outer = [[]]
+#     for num in arr:
+#         n = len(outer)
+#         for i in range(n):
+#             internal = outer[i][:]
+#             internal.append(num)
+#             outer.append(internal)
+#     return outer
  
-arr = [0, 1,2]
-ansArr = subset(arr)
-print(ansArr)
+# arr = [0, 1,2]
+# ansArr = subset(arr)
+# print(ansArr)
+
+# #----------Binary Iteration 
+# def subSetArray(arr):
+#     n = len(arr)
+#     subsets = []
+#     # Generate subsets using binary representation
+#     for i in range(2**n):
+#         subset = []
+#         for j in range(n):
+#             if (i >> j) & 1:
+#                 subset.append(arr[j])
+#         subsets.append(subset)
+#     return subsets
+
+# arr = [0, 1]
+# ansArr = subSetArray(arr)
+# print(ansArr)
 
 
 
