@@ -23,20 +23,32 @@
 
 # Return a array of all subsets of the Array given 
 # Passing the array from outside 
-def subSetArray(arr,ansArrin,ansArr):
-    if len(arr)==0:
-        ansArr.append(ansArrin.copy())
-        return 
-    item = arr[0]
-    subSetArray(arr[1:],ansArrin +[item],ansArr)
-    subSetArray(arr[1:],ansArrin,ansArr)
+
+# def subSetArray(arr,ansArrin,ansArr):
+#     if len(arr)==0:
+#         ansArr.append(ansArrin.copy())
+#         return 
+#     item = arr[0]
+#     subSetArray(arr[1:],ansArrin +[item],ansArr)
+#     subSetArray(arr[1:],ansArrin,ansArr)
     
-arr = [0,1]
-ansArr=[]
-subSetArray(arr,[],ansArr)
-print(ansArr)
+# arr = [0,1]
+# ansArr=[]
+# subSetArray(arr,[],ansArr)
+# print(ansArr)
 
 # Creating the array inside each call 
+def subSetArray(arr):
+    if len(arr) == 0:
+        return [[]]  # Base case: return a list containing an empty subset
+    else:
+        subsets_without_first = subSetArray(arr[1:])  # Get subsets without the first element
+        subsets_with_first = [[arr[0]] + subset for subset in subsets_without_first]  # Add first element to each subset
+        return subsets_without_first + subsets_with_first  # Combine both subsets
+
+arr = [0, 1]
+ansArr = subSetArray(arr)
+print(ansArr)
 
 
 
