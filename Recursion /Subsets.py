@@ -38,17 +38,34 @@
 # print(ansArr)
 
 # Creating the array inside each call 
-def subSetArray(arr):
-    if len(arr) == 0:
-        return [[]]  # Base case: return a list containing an empty subset
-    else:
-        subsets_without_first = subSetArray(arr[1:])  # Get subsets without the first element
-        subsets_with_first = [[arr[0]] + subset for subset in subsets_without_first]  # Add first element to each subset
-        return subsets_without_first + subsets_with_first  # Combine both subsets
+# def subSetArray(arr):
+#     if len(arr) == 0:
+#         return [[]]  # Base case: return a list containing an empty subset
+#     else:
+#         subsets_without_first = subSetArray(arr[1:])  # Get subsets without the first element
+#         subsets_with_first = [[arr[0]] + subset for subset in subsets_without_first]  # Add first element to each subset
+#         return subsets_without_first + subsets_with_first  # Combine both subsets
 
-arr = [0, 1]
-ansArr = subSetArray(arr)
+# arr = [0, 1]
+# ansArr = subSetArray(arr)
+# print(ansArr)
+
+# Iteration 
+
+def subset(arr):
+    outer = [[]]
+    for num in arr:
+        n = len(outer)
+        for i in range(n):
+            internal = outer[i][:]
+            internal.append(num)
+            outer.append(internal)
+    return outer
+ 
+arr = [0, 1,2]
+ansArr = subset(arr)
 print(ansArr)
+
 
 
 
