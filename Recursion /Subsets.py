@@ -83,6 +83,26 @@
 # ansArr = subSetArray(arr)
 # print(ansArr)
 
+# Duplicate Elements are there 
 
-
+def subsetDuplicate(arr):
+    arr.sort()
+    outer = [[]]
+    start = 0
+    end = 0
+    for i in range(len(arr)):
+        start = 0
+        if (i>0 and arr[i]==arr[i-1]):
+            start = end+1
+        end = len(outer)-1
+        n = len(outer)
+        for j in range(start,n):
+            internal = outer[j][:]
+            internal.append(arr[i])
+            outer.append(internal)
+    return outer
+ 
+arr = [0, 1,2,2]
+ansArr = subsetDuplicate(arr)
+print(ansArr)
 
