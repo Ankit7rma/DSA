@@ -16,17 +16,37 @@
 
 
 
-def permutationsCount(ans,p,up):
+# def permutationsCount(ans,p,up):
+#     if len(up)==0:
+#         return 1
+#     ch = up[0]
+#     count = 0
+#     for i in range(len(p)+1):
+#         first = p[:i]
+#         second =p[i:]
+#         count +=permutationsCount(ans,first+ch+second,up[1:])
+#     return count
+
+
+# answer = permutationsCount([],"","abc")
+# print(answer) 
+
+
+# Array in every loop 
+def permutations(p,up):
+    arr = []
     if len(up)==0:
-        return 1
+        arr.append(p)
+        return arr
     ch = up[0]
-    count = 0
     for i in range(len(p)+1):
         first = p[:i]
-        second =p[i:]
-        count +=permutationsCount(ans,first+ch+second,up[1:])
-    return count
+        second = p[i:]
+        a = permutations(first+ch+second,up[1:])
+        arr.extend(a)
 
+        
+    return arr
 
-answer = permutationsCount([],"","abc")
-print(answer) 
+ans = permutations("","abc")
+print(ans)
