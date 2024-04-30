@@ -79,7 +79,7 @@
 # arr = [0, 1]
 # ansArr = subSetArray(arr)
 # print(ansArr)
-# NExt
+# test
 # Duplicate Elements are there 
 def subsetDuplicate(arr):
     arr.sort()
