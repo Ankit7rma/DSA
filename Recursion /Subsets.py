@@ -8,8 +8,6 @@
 #     # subSets(arr,ansString+ch,string[1:])  this prints ['', 'c', 'b', 'bc', 'a', 'ac', 'ab', 'abc']
 #     subSets(arr,ansString+ch,string[1:])
 #     subSets(arr,ansString,string[1:])   # this prints ['abc', 'ab', 'ac', 'a', 'bc', 'b', 'c', '']
-    
-
 
 # string = "abc" 
 # arr=[] 
@@ -18,8 +16,6 @@
 # sorted_arr = sorted(arr, key=lambda x: len(x))
 # print(sorted_arr)  #this prints ['', 'a', 'b', 'c', 'ab', 'ac', 'bc', 'abc'] 
 # # print(arr) 
-
-
 
 # Return a array of all subsets of the Array given 
 # Passing the array from outside 
@@ -61,7 +57,8 @@
 #             internal.append(num)
 #             outer.append(internal)
 #     return outer
- 
+
+
 # arr = [0, 1,2]
 # ansArr = subset(arr)
 # print(ansArr)
@@ -82,9 +79,8 @@
 # arr = [0, 1]
 # ansArr = subSetArray(arr)
 # print(ansArr)
-
+# NExt
 # Duplicate Elements are there 
-
 def subsetDuplicate(arr):
     arr.sort()
     outer = [[]]
@@ -101,8 +97,13 @@ def subsetDuplicate(arr):
             internal.append(arr[i])
             outer.append(internal)
     return outer
- 
+
 arr = [0, 1,2,2]
 ansArr = subsetDuplicate(arr)
 print(ansArr)
+
+
+
+
+
 
