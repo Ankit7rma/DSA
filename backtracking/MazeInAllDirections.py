@@ -20,8 +20,6 @@ def mazeInAllDirections(ansArr,p,maze, r, c):
     maze[r][c]= True
     return ansArr
 
-
-
      
 ansArr=[]
 maze = [[True,True,True],[True,True,True],[True,True,True]]
