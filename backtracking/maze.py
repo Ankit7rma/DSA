@@ -1,14 +1,17 @@
-# def countWays(r,c):
-#     if r==1 or c==1:
-#         return 1
-#     left = countWays(r-1,c)
-#     right = countWays(r,c-1)
 
-#     return left + right 
 
-# # maze is of 3,3 we need to reach from 0,0 to 3,3
-# ans = countWays(3,3)
-# print(ans)
+# Count No of ways you can reach one end to another going right and down only   
+def countWays(r,c):
+    if r==1 or c==1:
+        return 1
+    left = countWays(r-1,c)
+    right = countWays(r,c-1)
+
+    return left + right 
+
+# maze is of 3,3 we need to reach from 0,0 to 3,3
+ans = countWays(3,3)
+print(ans)
 
 
 # def MazeWaysPrint(p, r, c):
@@ -83,21 +86,21 @@
 
 
 
-def mazeWithRestrictions(ansArr,p,maze,r,c):
+# def mazeWithRestrictions(ansArr,p,maze,r,c):
      
-    if r == len(maze)-1 and c == len(maze[0])-1:
-        ansArr.append(p)
-        return  
-    if (maze[r][c]==False):
-        return  
-    if r<len(maze)-1:
-        mazeWithRestrictions(ansArr,p+"D",maze,r+1,c)
-    if c<len(maze[0])-1:
-        mazeWithRestrictions(ansArr,p+"R",maze,r,c+1)
+#     if r == len(maze)-1 and c == len(maze[0])-1:
+#         ansArr.append(p)
+#         return  
+#     if (maze[r][c]==False):
+#         return  
+#     if r<len(maze)-1:
+#         mazeWithRestrictions(ansArr,p+"D",maze,r+1,c)
+#     if c<len(maze[0])-1:
+#         mazeWithRestrictions(ansArr,p+"R",maze,r,c+1)
 
      
-ansArr=[]
-maze = [[True,True,True],[True,False,True],[True,True,True]]
-mazeWithRestrictions(ansArr,"",maze, 0, 0)
-print(ansArr) 
-# }
+# ansArr=[]
+# maze = [[True,True,True],[True,False,True],[True,True,True]]
+# mazeWithRestrictions(ansArr,"",maze, 0, 0)
+# print(ansArr) 
+# # }

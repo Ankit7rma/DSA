@@ -24,7 +24,8 @@
 # ansArr=[]
 # maze = [[True,True,True],[True,True,True],[True,True,True]]
 # mazeInAllDirections(ansArr,"",maze, 0, 0)
-# print(ansArr)  
+# print(ansArr)
+# print(len(ansArr))    
 
 
 def mazeInAllDirections(ansArr,p,maze, r, c,path,step):
@@ -57,9 +58,6 @@ def mazeInAllDirections(ansArr,p,maze, r, c,path,step):
     path[r][c]=0
     return  ansArr 
      
-    
-
-     
 ansArr=[]
 maze = [[True,True,True],[True,True,True],[True,True,True]]
 n = len(maze)
@@ -68,3 +66,4 @@ path=  [[0] * m for _ in range(n)]
 mazeInAllDirections(ansArr,"",maze, 0, 0,path,step=1)
  
 print(ansArr)  
+ 
