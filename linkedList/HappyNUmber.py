@@ -21,3 +21,20 @@ class Solution:
         return False
          
 
+# class Solution:
+#     def isHappy(self, n: int) -> bool:
+#         nums = {}
+#         num = 0
+#         curr = n
+#         while True:
+#             for i in str(curr):
+#                 num+= int(i)**2
+#             if num == 1:
+#                 return True
+#             if num in nums:
+#                 return False
+#             nums[num]=0
+#             curr = num
+#             num = 0
+            
+        
