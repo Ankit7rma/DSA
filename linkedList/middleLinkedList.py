@@ -1,7 +1,7 @@
 def middle(head):
-    f = head
-    s = head
-    while s and s.next:
-        f = f.next
-        s = s.next.next
-    return f
+    slow = head
+    fast = head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+    return slow
