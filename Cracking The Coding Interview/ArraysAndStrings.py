@@ -13,7 +13,14 @@
 # iu = is_unique2(s)
 # print(iu)
 
+
 # Problem: Given two strings, write a method to decide if one is a permutation of other.
+
+# - Sort the Strings And Check equal 
+# - make freq of characters and compare 
+# - get all permutations and check in them 
+# - at making each permutation check it is equal or not 
+{
 #1 processed and unprocessed method 
 # def checkPermutation(a,b):
 #     def permHelper(ans,helpStr,a):
@@ -73,30 +80,45 @@
 # print(ans)
 
 
-def checkPermutation(a,b):
-    def backtrack_string(s, ind, res):
-        if ind == len(s):
-            res.append(''.join(s))   
-            return
-        
-        for i in range(ind, len(s)):
-            s[i], s[ind] = s[ind], s[i]
-            backtrack_string(s, ind + 1, res)
-            s[i], s[ind] = s[ind], s[i] 
-    arr = []
-    string = a
- 
-    backtrack_string(list(string),0,arr)
-    print(arr)
-    if b in arr:
-        return True
-    else:
-        return False
+# def checkPermutation(a,b):
+#     def backtrack_string(s, ind, res):
+#         if ind == len(s):
+#             res.append(''.join(s))   
+#             return
 
-a="abc"
-b="bca"
-ans = checkPermutation(a,b)
+#         for i in range(ind, len(s)):
+#             s[i], s[ind] = s[ind], s[i]
+#             backtrack_string(s, ind + 1, res)
+#             s[i], s[ind] = s[ind], s[i] 
+#     arr = []
+#     string = a
+
+# backtrack_string(list(string),0,arr)
+# print(arr)
+# if b in arr:
+#     return True
+# else:
+#     return False
+
+# a="abc"
+# b="bca"
+# ans = checkPermutation(a,b)
+# print(ans)
+}
+
+# URLify
+
+def URLify(string,n):
+    s = ""
+    for i in range(n):
+        if string[i]==" ":
+            s+="%20"
+        else:
+            s+=string[i]
+
+    return s
+string = "Mr John Smith"
+n = len(string)
+print(n)
+ans = URLify(string,n)
 print(ans)
-
-
-
